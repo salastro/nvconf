@@ -1,3 +1,5 @@
-# Example_config
+# NeoVim CONFiguration
 
-This can be used as an example custom config for NvChad. Do check the https://github.com/NvChad/nvcommunity
+My new neovim configuration for nvchad. More efficient, advanced, and powerful because of more lua and nvim.
+
+Rest description TBD.
