@@ -6,7 +6,7 @@ M.general = {
   i = {
     ["<C-s>"] = { "<cmd>normal! mm[s1z=`m<cr>", "Spell check previous mistake", opts = { silent = true } },
   },
-  
+
   -- Normal mode
   n = {
     -- General
@@ -15,7 +15,7 @@ M.general = {
     ["gl"] = { "$", "End of line", opts = { nowait = true } },
     ["gh"] = { "^", "Beginning of line", opts = { nowait = true } },
     ["daE"] = { "ggdG", "Delete all" },
-    ["gs"] = { "z=1<cr>", "Correct spell", opts = { nowait = true } },
+    ["<leader>ss"] = { "z=1<cr>", "Correct spell", opts = { nowait = true } },
 
     -- Quick Fix
     ["<leader>q"] = { "<cmd>lua toggle_quickfix()<cr>", "Toggle quickfix", opts = { silent = true } },
