@@ -109,19 +109,20 @@ local plugins = {
       require("core.utils").load_mappings "chatgpt"
     end,
     dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
       {
-        "nvim-telescope/telescope.nvim",
-        dependencies = {
-          {
-            "fhill2/telescope-ultisnips.nvim",
-            config = function()
-              require("telescope").load_extension "ultisnips"
-            end,
-          }
-        },
-      }
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+      },
+    },
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "fhill2/telescope-ultisnips.nvim",
+      config = function()
+        require("telescope").load_extension "ultisnips"
+      end,
     },
   },
 
