@@ -76,6 +76,23 @@ M.vimtex = {
   },
 }
 
+M.fugitive = {
+  plugin = true,
+  n = {
+    ["<leader>gs"] = { "<cmd>Git<cr>", "Git status", opts = { silent = true } },
+    ["<leader>gd"] = { "<cmd>Gdiffsplit<cr>", "Git diff", opts = { silent = true } },
+    ["<leader>gc"] = { "<cmd>Git commit<cr>", "Git commit", opts = { silent = true } },
+    ["<leader>gx"] = { "<cmd>Git commit --amend<cr>", "Git amend", opts = { silent = true } },
+    ["<leader>gp"] = { "<cmd>Git push<cr>", "Git push", opts = { silent = true } },
+    ["<leader>gl"] = { "<cmd>Git pull<cr>", "Git pull", opts = { silent = true } },
+    ["<Leader>gr"] = { "<cmd>Git rebase<cr>", "Git rebase", opts = { silent = true } },
+    ["<Leader>gR"] = { "<cmd>Git reset<cr>", "Git reset", opts = { silent = true } },
+    ["<leader>gC"] = { "<cmd>Git checkout<cr>", "Git checkout", opts = { silent = true } },
+    ["<leader>gB"] = { "<cmd>Git branch<cr>", "Git branch", opts = { silent = true } },
+    ["<leader>gT"] = { "<cmd>Git stash<cr>", "Git stash", opts = { silent = true } },
+  },
+}
+
 -- M.dap = {
 --   plugin = true,
 --   n = {
