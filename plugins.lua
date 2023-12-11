@@ -197,12 +197,10 @@ local plugins = {
     "tpope/vim-fugitive",
     event = "VeryLazy",
     config = function()
+      require("core.utils").load_mappings "fugitive"
       autocmd("FileType", {
         pattern = "fugitive",
-        command = {
-          "nnoremap <buffer> cc <cmd>silent vert Git commit<cr>",
-          "nnoremap <buffer> gp :cmd>silent Git push<cr>",
-        },
+        command = "nnoremap <buffer> cc :vert Git commit<cr> | nnoremap <buffer> gp :Git push<cr>",
       })
     end,
   },
