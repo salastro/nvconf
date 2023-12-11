@@ -95,13 +95,7 @@ local plugins = {
 
   {
     "jackMort/ChatGPT.nvim",
-    cmd = {
-      "ChatGPT",
-      "ChatGPTRun",
-      "ChatGPTActAs",
-      "ChatGPTCompleteCode",
-      "ChatGPTEditWithInstructions",
-    },
+    event = "VeryLazy",
     config = function()
       require("chatgpt").setup {
         api_key_cmd = "pass show openai.com/api-keys/Nvim",
