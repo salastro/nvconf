@@ -6,6 +6,7 @@ M.general = {
   i = {
     ["<C-s>"] = { "<cmd>normal! mm[s1z=`m<cr>", "Spell check previous mistake", opts = { silent = true } },
   },
+  
   -- Normal mode
   n = {
     -- General
@@ -18,7 +19,16 @@ M.general = {
 
     -- Quick Fix
     ["<leader>q"] = { "<cmd>lua toggle_quickfix()<cr>", "Toggle quickfix", opts = { silent = true } },
+
+    -- Git signs
+    ["<leader>sh"] = { "<cmd>lua require('gitsigns').stage_hunk()<cr>", "Stage hunk", opts = { silent = true } },
+    ["<leader>us"] = {
+      "<cmd>lua require('gitsigns').undo_stage_hunk()<cr>",
+      "Undo stage hunk",
+      opts = { silent = true },
+    },
   },
+
   v = {
     [";"] = { ":", "Enter command mode", opts = { nowait = true } },
     [":"] = { ";" },
@@ -26,6 +36,7 @@ M.general = {
     ["gl"] = { "$", "End of line", opts = { nowait = true } },
     ["gh"] = { "^", "Beginning of line", opts = { nowait = true } },
   },
+
   -- Pending operation
   o = {
     ["gl"] = { "$", "End of line", opts = { nowait = true } },
