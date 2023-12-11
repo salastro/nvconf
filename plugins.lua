@@ -196,7 +196,16 @@ local plugins = {
   {
     "tpope/vim-fugitive",
     event = "VeryLazy",
-  }
+    config = function()
+      autocmd("FileType", {
+        pattern = "fugitive",
+        command = {
+          "nnoremap <buffer> cc <cmd>silent vert Git commit<cr>",
+          "nnoremap <buffer> gp :cmd>silent Git push<cr>",
+        },
+      })
+    end,
+  },
 
   -- All NvChad plugins are lazy-loaded by default
   -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
