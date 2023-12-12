@@ -169,29 +169,12 @@ local plugins = {
     end,
   },
 
-  -- To make a plugin not be loaded
-  -- LuaSnip
-  {
-    "L3MON4D3/LuaSnip",
-    enabled = false,
-  },
-
-  -- UltiSnips
-  {
-    "SirVer/ultisnips",
-    dependencies = {
-      "honza/vim-snippets",
-      "quangnguyen30192/cmp-nvim-ultisnips",
-    },
-    event = "InsertEnter",
-    config = function()
-      vim.g.UltiSnipsExpandTrigger = "<Tab>"
-      vim.g.UltiSnipsJumpForwardTrigger = "<Tab>"
-      vim.g.UltiSnipsJumpBackwardTrigger = "<S-Tab>"
-      vim.g.UltiSnipsEditSplit = "vertical"
-      vim.g.loaded_python3_provider = nil
-    end,
-  },
+  -- -- To make a plugin not be loaded
+  -- -- LuaSnip
+  -- {
+  --   "L3MON4D3/LuaSnip",
+  --   enabled = false,
+  -- },
 
   {
     "tpope/vim-fugitive",
