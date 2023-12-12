@@ -13,10 +13,6 @@ vim.opt.rnu = true
 
 -- Auto commands
 autocmd("BufWritePost", {
-  pattern = "*config.def.h",
-  command = "!doas rm 'config.h' && doas make clean install",
-})
-autocmd("BufWritePost", {
   pattern = "blocks.def.h",
   command = "!doas rm 'blocks.h' && doas make clean install && { pkill dwmblocks;setsid dwmblocks & }",
 })
