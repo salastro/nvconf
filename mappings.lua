@@ -27,6 +27,9 @@ M.general = {
       "Undo stage hunk",
       opts = { silent = true },
     },
+
+    -- LOC
+    ["<C-g>"] = { "<cmd>!loc %<cr>", "Count lines of code of the current file" },
   },
 
   v = {
