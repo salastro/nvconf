@@ -123,9 +123,15 @@ local plugins = {
   {
     "lervag/vimtex",
     ft = "tex",
+    dependencies = {
+      "iurimateus/luasnip-latex-snippets.nvim",
+    },
     config = function()
       require "custom.configs.vimtex"
       require("core.utils").load_mappings "vimtex"
+      require'luasnip-latex-snippets'.setup()
+      -- or setup({ use_treesitter = true })
+      require("luasnip").config.setup { enable_autosnippets = true }
     end,
   },
 
