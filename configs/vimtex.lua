@@ -2,8 +2,8 @@
 vim.g.vimtex_view_method = "zathura_simple"
 
 -- Compiler XeLaTeX
-vim.g.vimtex_compiler_latexrun_engines = {
-  _ = "xelatex",
+vim.g.vimtex_compiler_latexmk_engines = {
+  _ = "-xelatex",
 }
 
 -- Conceal
