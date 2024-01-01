@@ -16,6 +16,7 @@ M.treesitter = {
     "python",
     "latex",
     "verilog",
+    "bash",
   },
   indent = {
     enable = true,
@@ -58,7 +59,10 @@ M.mason = {
     "texlab",
 
     -- System Verilog
-    "verible",
+    "svls",
+
+    -- Bash
+    "bash-language-server",
   },
 }
 
