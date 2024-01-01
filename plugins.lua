@@ -123,10 +123,15 @@ local plugins = {
   {
     "lervag/vimtex",
     ft = "tex",
+    dependencies = {
+      "iurimateus/luasnip-latex-snippets.nvim",
+    },
     config = function()
       require "custom.configs.vimtex"
       require("core.utils").load_mappings "vimtex"
+      require'luasnip-latex-snippets'.setup()
       -- or setup({ use_treesitter = true })
+      require("luasnip").config.setup { enable_autosnippets = true }
     end,
   },
 
@@ -170,29 +175,12 @@ local plugins = {
     end,
   },
 
-  -- To make a plugin not be loaded
-  -- LuaSnip
-  {
-    "L3MON4D3/LuaSnip",
-    enabled = false,
-  },
-
-  -- UltiSnips
-  {
-    "SirVer/ultisnips",
-    dependencies = {
-      "honza/vim-snippets",
-      "quangnguyen30192/cmp-nvim-ultisnips",
-    },
-    event = "InsertEnter",
-    config = function()
-      vim.g.loaded_python3_provider = nil
-      vim.g.UltiSnipsExpandTrigger = "<Tab>"
-      vim.g.UltiSnipsJumpForwardTrigger = "<Tab>"
-      vim.g.UltiSnipsJumpBackwardTrigger = "<S-Tab>"
-      vim.g.UltiSnipsEditSplit = "vertical"
-    end,
-  },
+  -- -- To make a plugin not be loaded
+  -- -- LuaSnip
+  -- {
+  --   "L3MON4D3/LuaSnip",
+  --   enabled = false,
+  -- },
 
   {
     "tpope/vim-fugitive",
