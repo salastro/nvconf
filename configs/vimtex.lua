@@ -47,11 +47,19 @@ end
 
 -- Drag PDF
 function _G.dragPDF()
-  -- Get current file name
+  -- Get current file name without extension
   local file = vim.fn.expand "%:t:r"
 
+  -- Get the output directory from vimtex_compiler_latexmk
+  local output = vim.g.vimtex_compiler_latexmk.out_dir
+
+  -- Create the file path
+  if output or output == "" then
+    file = string.format("%s/%s", output, file)
+  end
+
   -- Create command
-  -- drag <file>.pdf
+  -- setsid dragon-drop [<output>/]<file>.pdf &
   local command = string.format("silent !setsid dragon-drop %s.pdf &", file)
 
   -- Run command
