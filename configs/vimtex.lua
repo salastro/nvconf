@@ -6,6 +6,17 @@ vim.g.vimtex_compiler_latexmk_engines = {
   _ = "-xelatex",
 }
 
+vim.g.vimtex_compiler_latexmk = {
+  out_dir = "output",
+  options = {
+    "-shell-escape",
+    "-verbose",
+    "-file-line-error",
+    "-synctex=1",
+    "-interaction=nonstopmode",
+  },
+}
+
 -- Conceal
 vim.opt.conceallevel = 2
 vim.g.tex_conceal = "abdmgs"
