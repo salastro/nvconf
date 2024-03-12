@@ -96,9 +96,9 @@ local plugins = {
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
-      "fhill2/telescope-ultisnips.nvim",
+      "benfowler/telescope-luasnip.nvim",
       config = function()
-        require("telescope").load_extension "ultisnips"
+        require('telescope').load_extension('luasnip')
       end,
     },
   },
