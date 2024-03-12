@@ -94,23 +94,6 @@ local plugins = {
   },
 
   {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("chatgpt").setup {
-        api_key_cmd = "pass show openai.com/api-keys/Nvim",
-      }
-      require("core.utils").load_mappings "chatgpt"
-    end,
-    dependencies = {
-      {
-        "MunifTanjim/nui.nvim",
-        "nvim-lua/plenary.nvim",
-      },
-    },
-  },
-
-  {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "fhill2/telescope-ultisnips.nvim",
