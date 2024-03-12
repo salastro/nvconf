@@ -112,7 +112,7 @@ local plugins = {
     config = function()
       require "custom.configs.vimtex"
       require("core.utils").load_mappings "vimtex"
-      require'luasnip-latex-snippets'.setup()
+      require("luasnip-latex-snippets").setup()
       -- or setup({ use_treesitter = true })
       require("luasnip").config.setup { enable_autosnippets = true }
     end,
