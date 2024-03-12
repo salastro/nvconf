@@ -176,7 +176,21 @@ local plugins = {
       })
     end,
   },
+  {
+    "Julian/lean.nvim",
+    event = { "BufReadPre *.lean", "BufNewFile *.lean" },
 
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "nvim-lua/plenary.nvim",
+      -- you also will likely want nvim-cmp or some completion engine
+    },
+
+    -- see details below for full configuration options
+    opts = {
+      mappings = true,
+    },
+  },
   -- All NvChad plugins are lazy-loaded by default
   -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
   -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
