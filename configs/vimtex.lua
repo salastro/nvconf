@@ -69,6 +69,7 @@ function _G.dragPDF()
   vim.cmd "stopinsert"
 end
 
+-- Command and Env surround
 require("nvim-surround").buffer_setup {
   surrounds = {
     ["c"] = {
@@ -85,3 +86,6 @@ require("nvim-surround").buffer_setup {
     },
   },
 }
+
+-- Folds
+vim.g.vimtex_fold_enabled = 1
