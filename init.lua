@@ -43,3 +43,7 @@ function _G.toggle_quickfix()
     vim.cmd "cclose"
   end
 end
+
+-- Folds
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
