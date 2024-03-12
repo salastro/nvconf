@@ -15,7 +15,6 @@ M.general = {
     ["gl"] = { "$", "End of line", opts = { nowait = true } },
     ["gh"] = { "^", "Beginning of line", opts = { nowait = true } },
     ["daE"] = { "ggdG", "Delete all" },
-    ["<leader>ss"] = { "z=1<cr>", "Correct spell", opts = { nowait = true } },
 
     -- Quick Fix
     ["<leader>q"] = { "<cmd>lua toggle_quickfix()<cr>", "Toggle quickfix", opts = { silent = true } },
