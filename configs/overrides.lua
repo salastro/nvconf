@@ -65,6 +65,12 @@ M.mason = {
 
     -- Bash
     "bash-language-server",
+
+    -- Zig
+    "zls",
+
+    -- Makefile
+    "checkmake",
   },
 }
 
