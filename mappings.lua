@@ -20,13 +20,9 @@ M.general = {
     -- Quick Fix
     ["<leader>q"] = { "<cmd>lua toggle_quickfix()<cr>", "Toggle quickfix", opts = { silent = true } },
 
-    -- Git signs
+    -- Git
     ["<leader>sh"] = { "<cmd>lua require('gitsigns').stage_hunk()<cr>", "Stage hunk", opts = { silent = true } },
-    ["<leader>us"] = {
-      "<cmd>lua require('gitsigns').undo_stage_hunk()<cr>",
-      "Undo stage hunk",
-      opts = { silent = true },
-    },
+    ["<leader>cc"] = { "<cmd>G commit<cr>", "Git commit", opts= { silent=true } },
 
     -- LOC
     ["<C-g>"] = { "<cmd>!loc %<cr>", "Count lines of code of the current file" },
