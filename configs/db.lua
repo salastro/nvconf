@@ -1,4 +1,4 @@
-require("dashboard").setup ({
+require("dashboard").setup {
   change_to_vcs_root = true,
   shortcut_type = "number",
   theme = "hyper",
@@ -33,18 +33,13 @@ require("dashboard").setup ({
         action = "Telescope find_files",
         key = "f",
       },
-      -- {
-      --   desc = " Apps",
-      --   group = "DiagnosticHint",
-      --   action = "Telescope app",
-      --   key = "a",
-      -- },
-      -- {
-      --   desc = " dotfiles",
-      --   group = "Number",
-      --   action = "Telescope dotfiles",
-      --   key = "d",
-      -- },
+      {
+        icon = " ",
+        desc = "Bookmarks",
+        group = "Number",
+        action = "Telescope marks",
+        key = "m",
+      },
     },
   },
-});
+}
