@@ -167,6 +167,13 @@ local plugins = {
       })
     end,
   },
+
+  {
+    -- automatically adjusts 'shiftwidth' and 'expandtab'
+    "tpope/vim-sleuth",
+    lazy = false,
+  },
+
   {
     "Julian/lean.nvim",
     event = { "BufReadPre *.lean", "BufNewFile *.lean" },
