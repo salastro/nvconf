@@ -5,6 +5,7 @@ M.general = {
   -- Insert mode
   i = {
     ["<C-s>"] = { "<cmd>normal! mm[s1z=`m<cr>", "Spell check previous mistake", opts = { silent = true } },
+    ["jk"] = { "<esc>", "Easy escape" },
   },
 
   -- Normal mode

@@ -51,15 +51,6 @@ local plugins = {
     end,
   },
 
-  -- Install a plugin
-  {
-    "max397574/better-escape.nvim",
-    event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
-
   {
     "nvimdev/dashboard-nvim",
     event = "VimEnter",
