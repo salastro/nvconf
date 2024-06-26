@@ -72,16 +72,41 @@ end
 -- Command and Env surround
 require("nvim-surround").buffer_setup {
   surrounds = {
+    -- Command
     ["c"] = {
       add = function()
         local cmd = require("nvim-surround.config").get_input "Command: "
         return { { "\\" .. cmd .. "{" }, { "}" } }
       end,
     },
+    -- Environment
     ["e"] = {
       add = function()
         local env = require("nvim-surround.config").get_input "Environment: "
         return { { "\\begin{" .. env .. "}" }, { "\\end{" .. env .. "}" } }
+      end,
+    },
+    -- \left\ \right\
+    ["("] = {
+      add = function()
+        return { { "\\left( " }, { " \\right)" } }
+      end,
+    },
+    ["{"] = {
+      add = function()
+        return { { "\\left{ " }, { " \\right}" } }
+      end,
+    },
+    ["["] = {
+      add = function()
+        return { { "\\left[ " }, { " \\right]" } }
+      end,
+    },
+    ["l"] = {
+      add = function()
+        local left = require("nvim-surround.config").get_input "Left: "
+        local right = require("nvim-surround.config").get_input "Right: "
+        return { { "\\left" .. left }, { "\\right" .. right } }
       end,
     },
   },
