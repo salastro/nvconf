@@ -17,5 +17,17 @@ end
 lspconfig.verible.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  root_dir = function() return vim.loop.cwd() end
+  root_dir = function()
+    return vim.loop.cwd()
+  end,
+}
+
+-- Clangd
+lspconfig.clangd.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {
+    "clangd",
+    "--offset-encoding=utf-16",
+  },
 }
