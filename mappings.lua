@@ -30,6 +30,10 @@ M.general = {
 
     -- LOC
     ["<C-g>"] = { "<cmd>!loc %<cr>", "Count lines of code of the current file" },
+
+    -- Telescope LSP functions
+    ["<leader>ld"] = { "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>", "Document symbols" },
+    ["<leader>lw"] = { "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>", "Workspace symbols" },
   },
 
   v = {
