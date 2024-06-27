@@ -81,7 +81,7 @@ local plugins = {
 
   {
     "kmonad/kmonad-vim",
-    lazy = false,
+    event = { "BufReadPre *.kbd", "BufNewFile *.kbd" },
   },
 
   {
