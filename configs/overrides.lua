@@ -32,6 +32,25 @@ M.treesitter = {
       "latex",
     },
   },
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ["aa"] = "@parameter.outer",
+        ["ia"] = "@parameter.inner",
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+      },
+      selection_modes = {
+        ["@function.outer"] = "V",
+        ["@class.outer"] = "V",
+      },
+      include_surrounding_whitespace = true,
+    },
+  },
 }
 
 M.mason = {
