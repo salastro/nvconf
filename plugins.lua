@@ -156,7 +156,7 @@ local plugins = {
 
   {
     "tpope/vim-fugitive",
-    event = "VeryLazy",
+    event = "User FilePost",
     config = function()
       require("core.utils").load_mappings "fugitive"
       autocmd("FileType", {
