@@ -60,7 +60,12 @@ local plugins = {
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
+    keys = {
+      { "ys", mode = "n", desc = "Surround" },
+      { "cs", mode = "n", desc = "Change Surround" },
+      { "ds", mode = "n", desc = "Delete Surround" },
+      { "S", mode = "x", desc = "Surround (visual)" },
+    },
     config = function()
       require("nvim-surround").setup {}
     end,
@@ -130,17 +135,23 @@ local plugins = {
 
   {
     "christoomey/vim-sort-motion",
-    event = "VeryLazy",
+    keys = {
+      { "gs", mode = "n", desc = "Sort Motion" },
+    },
   },
 
   {
     "christoomey/vim-titlecase",
-    event = "VeryLazy",
+    keys = {
+      { "gz" , mode = "n", desc = "Titlecase" },
+    }
   },
 
   {
     "smoka7/hop.nvim",
-    event = "VeryLazy",
+    keys = {
+      { "<leader>j", mode = "n", desc = "Hop Char1" },
+    },
     config = function()
       require("hop").setup()
       require("core.utils").load_mappings "hop"
