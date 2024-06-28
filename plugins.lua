@@ -46,12 +46,7 @@ local plugins = {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {},
-    opts = function()
-      return require "custom.configs.cmp"
-    end,
-    config = function(_, opts)
-      require("cmp").setup(opts)
-    end,
+    opts = overrides.cmp,
   },
 
   {
