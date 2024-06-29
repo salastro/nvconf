@@ -16,10 +16,15 @@ local plugins = {
           require "custom.configs.null-ls"
         end,
       },
+      {
+        "joechrisellis/lsp-format-modifications.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+      },
     },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
+      require("core.utils").load_mappings "lsp"
     end, -- Override to setup mason-lspconfig
   },
 
