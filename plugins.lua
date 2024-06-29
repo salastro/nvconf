@@ -72,7 +72,7 @@ local plugins = {
       { "ys", mode = "n", desc = "Surround" },
       { "cs", mode = "n", desc = "Change Surround" },
       { "ds", mode = "n", desc = "Delete Surround" },
-      { "S", mode = "x", desc = "Surround (visual)" },
+      { "S",  mode = "x", desc = "Surround (visual)" },
     },
     config = function()
       require("nvim-surround").setup {}
@@ -145,6 +145,7 @@ local plugins = {
     "christoomey/vim-sort-motion",
     keys = {
       { "gs", mode = "n", desc = "Sort Motion" },
+      { "gs", mode = "x", desc = "Sort Motion" },
     },
   },
 
@@ -152,14 +153,13 @@ local plugins = {
     "christoomey/vim-titlecase",
     keys = {
       { "gz", mode = "n", desc = "Titlecase" },
+      { "gz", mode = "x", desc = "Titlecase" },
     },
   },
 
   {
     "smoka7/hop.nvim",
-    keys = {
-      { "<leader>j", mode = "n", desc = "Hop Char1" },
-    },
+    event = "VeryLazy",
     config = function()
       require("hop").setup()
       require("core.utils").load_mappings "hop"
