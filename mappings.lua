@@ -22,14 +22,10 @@ M.general = {
 
     -- Git
     ["<leader>sh"] = { "<cmd>lua require('gitsigns').stage_hunk()<cr>", "Stage hunk", opts = { silent = true } },
-    ["<leader>cc"] = { "<cmd>G commit<cr>", "Git commit", opts= { silent=true } },
+    ["<leader>cc"] = { "<cmd>G commit<cr>", "Git commit", opts = { silent = true } },
 
     -- LOC
     ["<C-g>"] = { "<cmd>!loc %<cr>", "Count lines of code of the current file" },
-
-    -- Telescope LSP functions
-    ["<leader>ld"] = { "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>", "Document symbols" },
-    ["<leader>lw"] = { "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>", "Workspace symbols" },
   },
 
   v = {
@@ -93,6 +89,14 @@ M.fugitive = {
     ["<leader>gC"] = { "<cmd>Git checkout<cr>", "Git checkout", opts = { silent = true } },
     ["<leader>gB"] = { "<cmd>Git branch<cr>", "Git branch", opts = { silent = true } },
     ["<leader>gT"] = { "<cmd>Git stash<cr>", "Git stash", opts = { silent = true } },
+  },
+}
+
+M.lsp = {
+  plugin = true,
+  n = {
+    ["<leader>ld"] = { "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>", "Document symbols" },
+    ["<leader>lw"] = { "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>", "Workspace symbols" },
   },
 }
 
