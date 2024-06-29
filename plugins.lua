@@ -45,7 +45,10 @@ local plugins = {
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
-    dependencies = {},
+    dependencies = {
+      "dmitmel/cmp-digraphs",
+      "FelipeLema/cmp-async-path",
+    },
     opts = overrides.cmp,
   },
 
@@ -143,8 +146,8 @@ local plugins = {
   {
     "christoomey/vim-titlecase",
     keys = {
-      { "gz" , mode = "n", desc = "Titlecase" },
-    }
+      { "gz", mode = "n", desc = "Titlecase" },
+    },
   },
 
   {
