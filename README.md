@@ -21,12 +21,5 @@
 - [x] **More moitons** like sort and titlecase
 - [x] **Surround** for surrounding text objects
 - [x] **Wakatime** for tracking time
+- [x] **Copilot** for AI code completion
 - [x] **Language support** for LaTeX, Lean, SXHKD, and Kmonad.
-
-## TODO
-- [ ] **DAP** (Debug Adapter Protocol) support
-- [ ] **Markdown** preview
-- [ ] **Multiple Cursors**
-- [ ] **Vimwiki** for note taking
-- [ ] Align motion
-- [ ] Better snippets handling
