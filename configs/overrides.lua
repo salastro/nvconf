@@ -115,6 +115,13 @@ if not iscmp then
   return M
 end
 M.cmp = {
+  snippet = {
+    expand = function(args)
+      require("luasnip").lsp_expand(args.body)
+      -- vim.fn["UltiSnips#Anon"](args.body)
+    end,
+  },
+
   mapping = {
     ["<CR>"] = cmp.config.disable,
     ["<C-p>"] = cmp.mapping.select_prev_item(),
