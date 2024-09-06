@@ -2,27 +2,25 @@ vim.loader.enable()
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
--- Auto resize panes when resizing nvim window
-autocmd("VimResized", {
-  pattern = "*",
-  command = "tabdo wincmd =",
-})
-
 -- Relative numbering
 vim.opt.rnu = true
 
 -- Auto commands
-autocmd("BufWritePost", {
-  pattern = "blocks.def.h",
-  command = "!doas rm 'blocks.h' && doas make clean install && { pkill dwmblocks;setsid dwmblocks & }",
-})
-autocmd("BufWritePost", {
-  pattern = "config.def.h",
-  command = "!doas rm 'config.h' && doas make clean install",
-})
-autocmd("BufWritePost", {
+autocmd("BufWritePost", { -- Reload kmonad
   pattern = "*.kbd",
   command = "!pkill kmonad; setsid kmonad %:p &",
+})
+autocmd("BufWritePost", { -- Reload sxhkd
+  pattern = "sxhkdrc",
+  command = "!pkill -USR1 sxhkd",
+})
+autocmd("BufReadPost", { -- Open the last edited position
+  pattern = "*",
+  command = 'if line("\'\\"") > 1 && line("\'\\"") <= line("$") | exe "normal! g\'\\"" | endif',
+})
+autocmd("VimResized", { -- Resize splits
+  pattern = "*",
+  command = "tabdo wincmd =",
 })
 
 -- Quickfix
