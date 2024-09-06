@@ -9,10 +9,6 @@ M.ui = {
   theme_toggle = { "onenord", "one_light" },
   transparency = true,
 
-  -- nvdash = {
-  --   load_on_startup = true,
-  -- },
-
   hl_override = highlights.override,
   hl_add = highlights.add,
 }
