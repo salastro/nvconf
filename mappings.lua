@@ -18,7 +18,17 @@ M.general = {
     ["daE"] = { "ggdG", "Delete all" },
 
     -- Quick Fix
-    ["<leader>q"] = { "<cmd>lua toggle_quickfix()<cr>", "Toggle quickfix", opts = { silent = true } },
+    ["<leader>q"] = { function ()
+      ToggleQuickFix()
+    end, "Toggle quickfix", opts = { silent = true } },
+
+    -- Compile and Run
+    ["<leader>cr"] = {
+      function()
+        CompileAndRun()
+      end,
+      "Compile and run the current file",
+    },
 
     -- Git
     ["<leader>sh"] = { "<cmd>lua require('gitsigns').stage_hunk()<cr>", "Stage hunk", opts = { silent = true } },
