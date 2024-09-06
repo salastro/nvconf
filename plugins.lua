@@ -225,11 +225,6 @@ local plugins = {
   --   lazy = false,
   -- }
 
-  -- {
-  --   "tpope/vim-dispatch",
-  --   event = "BufRead",
-  -- },
-
   {
     "stevearc/overseer.nvim",
     dependencies = {

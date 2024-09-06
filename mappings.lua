@@ -18,9 +18,13 @@ M.general = {
     ["daE"] = { "ggdG", "Delete all" },
 
     -- Quick Fix
-    ["<leader>q"] = { function ()
-      ToggleQuickFix()
-    end, "Toggle quickfix", opts = { silent = true } },
+    ["<leader>q"] = {
+      function()
+        ToggleQuickFix()
+      end,
+      "Toggle quickfix",
+      opts = { silent = true },
+    },
 
     -- Compile and Run
     ["<leader>cr"] = {
@@ -28,6 +32,14 @@ M.general = {
         CompileAndRun()
       end,
       "Compile and run the current file",
+    },
+
+    -- Drag and Drop
+    ["<leader>d"] = {
+      function()
+        DragAndDrop()
+      end,
+      "Drag and drop",
     },
 
     -- Git
