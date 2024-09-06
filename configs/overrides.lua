@@ -48,7 +48,7 @@ M.treesitter = {
         ["@function.outer"] = "V",
         ["@class.outer"] = "V",
       },
-      include_surrounding_whitespace = true,
+      include_surrounding_whitespace = false,
     },
   },
 }
@@ -118,7 +118,6 @@ M.cmp = {
   snippet = {
     expand = function(args)
       require("luasnip").lsp_expand(args.body)
-      -- vim.fn["UltiSnips#Anon"](args.body)
     end,
   },
 
@@ -166,7 +165,6 @@ M.cmp = {
   sources = {
     { name = "nvim_lsp" },
     { name = "luasnip" },
-    -- { name = "ultisnips" },
     { name = "buffer" },
     { name = "nvim_lua" },
     { name = "async_path" },
