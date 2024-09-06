@@ -16,10 +16,6 @@ local plugins = {
           require "custom.configs.null-ls"
         end,
       },
-      {
-        "joechrisellis/lsp-format-modifications.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-      },
     },
     config = function()
       require "plugins.configs.lspconfig"
@@ -100,7 +96,7 @@ local plugins = {
     dependencies = {
       "benfowler/telescope-luasnip.nvim",
       config = function()
-        require('telescope').load_extension('luasnip')
+        require("telescope").load_extension "luasnip"
       end,
     },
   },
@@ -166,12 +162,10 @@ local plugins = {
     end,
   },
 
-  -- -- To make a plugin not be loaded
-  -- -- LuaSnip
-  -- {
-  --   "L3MON4D3/LuaSnip",
-  --   enabled = false,
-  -- },
+  {
+    "L3MON4D3/LuaSnip",
+    enabled = true,
+  },
 
   {
     "tpope/vim-fugitive",
@@ -188,24 +182,35 @@ local plugins = {
   {
     -- automatically adjusts 'shiftwidth' and 'expandtab'
     "tpope/vim-sleuth",
-    lazy = false,
+    event = "BufRead",
   },
 
   {
     "Julian/lean.nvim",
     event = { "BufReadPre *.lean", "BufNewFile *.lean" },
-
     dependencies = {
       "neovim/nvim-lspconfig",
       "nvim-lua/plenary.nvim",
-      -- you also will likely want nvim-cmp or some completion engine
     },
-
-    -- see details below for full configuration options
     opts = {
       mappings = true,
     },
   },
+  -- {
+  --   "andymass/vim-matchup",
+  --   event = "CursorMoved",
+  --   config = function()
+  --     vim.g.matchup_matchparen_offscreen = { method = "popup" }
+  --   end,
+  -- },
+
+  -- {
+  --   "HiPhish/rainbow-delimiters.nvim",
+  --   event = "BufReadPre",
+  --   config = function()
+  --     require("rainbow_delimiters").setup()
+  --   end,
+  -- },
 
   {
     "wakatime/vim-wakatime",
@@ -219,6 +224,22 @@ local plugins = {
   --   "mg979/vim-visual-multi",
   --   lazy = false,
   -- }
+
+  -- {
+  --   "tpope/vim-dispatch",
+  --   event = "BufRead",
+  -- },
+
+  {
+    "stevearc/overseer.nvim",
+    dependencies = {
+      "stevearc/dressing.nvim",
+    },
+    event = "BufRead",
+    config = function()
+      require("overseer").setup()
+    end,
+  },
 }
 
 return plugins
