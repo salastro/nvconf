@@ -10,10 +10,6 @@ autocmd("BufWritePost", { -- Reload kmonad
   pattern = "*.kbd",
   command = "!pkill kmonad; setsid kmonad %:p &",
 })
-autocmd("BufWritePost", { -- Reload sxhkd
-  pattern = "sxhkdrc",
-  command = "!pkill -USR1 sxhkd",
-})
 autocmd("BufReadPost", { -- Open the last edited position
   pattern = "*",
   command = 'if line("\'\\"") > 1 && line("\'\\"") <= line("$") | exe "normal! g\'\\"" | endif',
