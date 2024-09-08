@@ -1,5 +1,6 @@
 local overrides = require "custom.configs.overrides"
 local autocmd = vim.api.nvim_create_autocmd
+local utils = require "core.utils"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -20,7 +21,7 @@ local plugins = {
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
-      require("core.utils").load_mappings "lsp"
+      utils.load_mappings "lsp"
     end, -- Override to setup mason-lspconfig
   },
 
@@ -45,7 +46,6 @@ local plugins = {
 
   {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
     dependencies = {
       "dmitmel/cmp-digraphs",
       "FelipeLema/cmp-async-path",
@@ -109,9 +109,8 @@ local plugins = {
     },
     config = function()
       require "custom.configs.vimtex"
-      require("core.utils").load_mappings "vimtex"
+      utils.load_mappings "vimtex"
       require("luasnip-latex-snippets").setup()
-      -- or setup({ use_treesitter = true })
       require("luasnip").config.setup { enable_autosnippets = true }
     end,
   },
@@ -158,7 +157,7 @@ local plugins = {
     event = "VeryLazy",
     config = function()
       require("hop").setup()
-      require("core.utils").load_mappings "hop"
+      utils.load_mappings "hop"
     end,
   },
 
@@ -171,7 +170,7 @@ local plugins = {
     "tpope/vim-fugitive",
     event = "User FilePost",
     config = function()
-      require("core.utils").load_mappings "fugitive"
+      utils.load_mappings "fugitive"
       autocmd("FileType", {
         pattern = "fugitive",
         command = "nnoremap <buffer> cc :vert Git commit<cr> | nnoremap <buffer> gp :Git push<cr>",
@@ -196,6 +195,7 @@ local plugins = {
       mappings = true,
     },
   },
+
   -- {
   --   "andymass/vim-matchup",
   --   event = "CursorMoved",
