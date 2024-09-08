@@ -226,7 +226,16 @@ local plugins = {
   -- }
 
   {
-    "stevearc/overseer.nvim",
+    "stevearc/dressing.nvim",
+    event = "BufReadPre",
+    config = function()
+      require("dressing").setup()
+    end,
+  },
+
+  { -- This plugin
+    "Zeioth/compiler.nvim",
+    cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
     dependencies = {
       {
         "stevearc/overseer.nvim",
