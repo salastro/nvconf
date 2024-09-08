@@ -252,9 +252,9 @@ local plugins = {
       },
       "nvim-telescope/telescope.nvim",
     },
-    event = "BufRead",
     config = function()
-      require("overseer").setup()
+      require("compiler").setup()
+      utils.load_mappings "compiler"
     end,
   },
 }
