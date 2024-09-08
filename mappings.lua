@@ -122,6 +122,16 @@ M.lsp = {
   },
 }
 
+M.compiler = {
+  plugin = true,
+  n = {
+    ["<leader>cl"] = {
+      "<cmd>CompilerToggleResults<cr>",
+      "Toggle compiler results",
+    },
+  },
+}
+
 -- M.dap = {
 --   plugin = true,
 --   n = {
