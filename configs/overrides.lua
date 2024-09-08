@@ -110,18 +110,10 @@ M.nvimtree = {
 }
 
 -- nvim-cmp
-local iscmp, cmp = pcall(require, "cmp")
-if not iscmp then
-  return M
-end
-M.cmp = {
-  snippet = {
-    expand = function(args)
-      require("luasnip").lsp_expand(args.body)
-    end,
-  },
-
-  mapping = {
+M.cmp = function()
+  local cmp = require "cmp"
+  local conf = require "plugins.configs.cmp"
+  conf.mapping = {
     ["<CR>"] = cmp.config.disable,
     ["<C-p>"] = cmp.mapping.select_prev_item(),
     ["<C-n>"] = cmp.mapping.select_next_item(),
@@ -161,15 +153,17 @@ M.cmp = {
       "i",
       "s",
     }),
-  },
-  sources = {
+  }
+  conf.sources = {
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "nvim_lua" },
     { name = "async_path" },
     { name = "digraphs" },
-  },
-}
+  }
+
+  return conf
+end
 
 return M
