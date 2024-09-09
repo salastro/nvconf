@@ -111,7 +111,6 @@ local plugins = {
       require "custom.configs.vimtex"
       utils.load_mappings "vimtex"
       require("luasnip-latex-snippets").setup()
-      require("luasnip").config.setup { enable_autosnippets = true }
     end,
   },
 
@@ -163,7 +162,16 @@ local plugins = {
 
   {
     "L3MON4D3/LuaSnip",
-    enabled = true,
+    dependencies = {
+      {
+        "rafamadriz/friendly-snippets",
+        enabled = false,
+      },
+      "honza/vim-snippets",
+    },
+    config = function ()
+      require("custom.configs.luasnip")
+    end
   },
 
   {
